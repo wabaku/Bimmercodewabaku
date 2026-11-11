@@ -18,9 +18,9 @@ with:
 - distribution: 'temurin'
 - java-version: '17'
 - name: Install dependencies & Build
-run: | 
-  npm install
-  npm run build
+  run: | 
+    npm install
+    npm run build
 - name: Sync Capacitor
 run: |
   npx cap add android || true
