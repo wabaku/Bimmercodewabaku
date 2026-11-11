@@ -22,9 +22,9 @@ with:
     npm install
     npm run build
 - name: Sync Capacitor
-run: |
-  npx cap add android || true
-  npx cap sync android
+  run: |
+    npx cap add android || true
+    npx cap sync android
 - name: Build Debug APK
 working-directory: ./android
 run: |
