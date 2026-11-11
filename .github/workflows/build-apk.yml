@@ -7,21 +7,21 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
           with:
-          node-version: 20
+            node-version: 20
       - uses: actions/setup-java@v4
         with:
-          distribution: temurin
+            distribution: temurin
           java-version: 17
       - name: Install dependencies & Build
         run: |
           npm install
           npm run build
-          npx cap sync android
+          npx cap add android || true
       - name: Build Debug APK
         working-directory: ./android
-        run: ./gradlew assembleDebug
+        run: ./gradlew
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: BimmerTech-Studio-Debug-APK
-          path: android/app/build/outputs/apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
