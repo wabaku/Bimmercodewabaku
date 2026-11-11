@@ -19,18 +19,18 @@ with:
 - java-version: '17'
 - name: Install dependencies & Build
 run: |
-npm install
-npm run build
+  npm install
+  npm run build
 - name: Sync Capacitor
 run: |
-npx cap add android || true
-npx cap sync android
+  npx cap add android || true
+  npx cap sync android
 - name: Build Debug APK
 working-directory: ./android
 run: |
-chmod +x gradlew
-./gradlew assembleDebug
-- name: Upload APK
+  chmod +x gradlew
+  ./gradlew assembleDebug
+  name: Upload APK
 uses: actions/upload-artifact@v4
 with:
 name: BimmerTech-Studio-Debug-APK
